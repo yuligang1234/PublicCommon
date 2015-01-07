@@ -1,0 +1,5 @@
+E:\Napoleon\GitHub\功能模块\公共模块\PublicCommon\Napoleon.PublicCommon\bin\Debug\Napoleon.PublicCommon.dll
+E:\Napoleon\GitHub\功能模块\公共模块\PublicCommon\Napoleon.PublicCommon\bin\Debug\Napoleon.PublicCommon.pdb
+E:\Napoleon\GitHub\功能模块\公共模块\PublicCommon\Napoleon.PublicCommon\bin\Debug\Newtonsoft.Json.dll
+E:\Napoleon\GitHub\功能模块\公共模块\PublicCommon\Napoleon.PublicCommon\obj\Debug\Napoleon.PublicCommon.dll
+E:\Napoleon\GitHub\功能模块\公共模块\PublicCommon\Napoleon.PublicCommon\obj\Debug\Napoleon.PublicCommon.pdb
