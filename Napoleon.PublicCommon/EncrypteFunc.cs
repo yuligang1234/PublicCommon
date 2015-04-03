@@ -15,8 +15,7 @@ namespace Napoleon.PublicCommon
         ///  MD5加密
         /// </summary>
         /// <param name="value">明文</param>
-        /// Author  : 俞立钢
-        /// Company : 绍兴标点电子技术有限公司
+        /// Author  : Napoleon
         /// Created : 2014-12-10 11:29:05
         public static string GetMd5(this string value)
         {
@@ -29,8 +28,7 @@ namespace Napoleon.PublicCommon
         ///  SHA1加密
         /// </summary>
         /// <param name="value">明文</param>
-        /// Author  : 俞立钢
-        /// Company : 绍兴标点电子技术有限公司
+        /// Author  : Napoleon
         /// Created : 2014-12-10 15:25:52
         public static string GetSha1(this string value)
         {
@@ -48,8 +46,7 @@ namespace Napoleon.PublicCommon
         /// </summary>
         /// <param name="value">明文</param>
         /// <param name="cryptoTransform">加密器对象</param>
-        /// Author  : 俞立钢
-        /// Company : 绍兴标点电子技术有限公司
+        /// Author  : Napoleon
         /// Created : 2014-12-11 14:44:11
         private static string EncrypteMethod(string value, ICryptoTransform cryptoTransform)
         {
@@ -71,8 +68,7 @@ namespace Napoleon.PublicCommon
         /// </summary>
         /// <param name="value">密文</param>
         /// <param name="cryptoTransform">加密器对象</param>
-        /// Author  : 俞立钢
-        /// Company : 绍兴标点电子技术有限公司
+        /// Author  : Napoleon
         /// Created : 2014-12-11 14:44:11
         private static string DecrypteMethod(string value, ICryptoTransform cryptoTransform)
         {
@@ -94,8 +90,7 @@ namespace Napoleon.PublicCommon
         /// </summary>
         /// <param name="value">明文</param>
         /// <param name="key">密钥</param>
-        /// Author  : 俞立钢
-        /// Company : 绍兴标点电子技术有限公司
+        /// Author  : Napoleon
         /// Created : 2014-12-11 13:44:46
         public static string EncrypteDes(this string value, string key)
         {
@@ -110,8 +105,7 @@ namespace Napoleon.PublicCommon
         /// </summary>
         /// <param name="value">密文</param>
         /// <param name="key">密钥</param>
-        /// Author  : 俞立钢
-        /// Company : 绍兴标点电子技术有限公司
+        /// Author  : Napoleon
         /// Created : 2014-12-11 14:31:15
         public static string DecrypteDes(this string value, string key)
         {
@@ -126,8 +120,7 @@ namespace Napoleon.PublicCommon
         /// </summary>
         /// <param name="value">明文</param>
         /// <param name="key">密钥</param>
-        /// Author  : 俞立钢
-        /// Company : 绍兴标点电子技术有限公司
+        /// Author  : Napoleon
         /// Created : 2014-12-11 13:44:46
         public static string EncrypteRc2(this string value, string key)
         {
@@ -142,8 +135,7 @@ namespace Napoleon.PublicCommon
         /// </summary>
         /// <param name="value">密文</param>
         /// <param name="key">密钥</param>
-        /// Author  : 俞立钢
-        /// Company : 绍兴标点电子技术有限公司
+        /// Author  : Napoleon
         /// Created : 2014-12-11 14:31:15
         public static string DecrypteRc2(this string value, string key)
         {
@@ -158,8 +150,7 @@ namespace Napoleon.PublicCommon
         /// </summary>
         /// <param name="value">明文</param>
         /// <param name="key">密钥</param>
-        /// Author  : 俞立钢
-        /// Company : 绍兴标点电子技术有限公司
+        /// Author  : Napoleon
         /// Created : 2014-12-11 13:44:46
         public static string EncrypteAes(this string value, string key)
         {
@@ -174,8 +165,7 @@ namespace Napoleon.PublicCommon
         /// </summary>
         /// <param name="value">密文</param>
         /// <param name="key">密钥</param>
-        /// Author  : 俞立钢
-        /// Company : 绍兴标点电子技术有限公司
+        /// Author  : Napoleon
         /// Created : 2014-12-11 14:31:15
         public static string DecrypteAes(this string value, string key)
         {

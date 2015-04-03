@@ -13,8 +13,7 @@ namespace Napoleon.PublicCommon
         /// </summary>
         /// <param name="sessionName">sessionName</param>
         /// <param name="obj">object</param>
-        /// Author  : 俞立钢
-        /// Company : 绍兴标点电子技术有限公司
+        /// Author  : Napoleon
         /// Created : 2014-10-31 10:38:13
         public static void SessionInsert(string sessionName, object obj)
         {
@@ -26,8 +25,7 @@ namespace Napoleon.PublicCommon
         ///  移除session
         /// </summary>
         /// <param name="sessionName">sessionName</param>
-        /// Author  : 俞立钢
-        /// Company : 绍兴标点电子技术有限公司
+        /// Author  : Napoleon
         /// Created : 2014-10-31 10:56:33
         public static void SessionRemove(string sessionName)
         {
@@ -43,10 +41,9 @@ namespace Napoleon.PublicCommon
         /// <param name="strname">cookie名称</param>
         /// <param name="strvalue">cookie值</param>
         /// <param name="days">保存天数</param>
-        /// Author  : 俞立钢
-        /// Company : 绍兴标点电子技术有限公司
+        /// Author  : Napoleon
         /// Created : 2015-01-07 20:03:23
-        public static void WriteCookie(string strname, string strvalue, int days = 1)
+        public static void WriteCookie(this string strvalue, string strname, int days = 1)
         {
             HttpCookie cookie = HttpContext.Current.Request.Cookies[strname];
             if (cookie == null)
@@ -64,18 +61,20 @@ namespace Napoleon.PublicCommon
         /// <param name="strname">The strname.</param>
         /// <param name="t">The t.</param>
         /// <param name="days">The days.</param>
-        /// Author  : 俞立钢
-        /// Company : 绍兴标点电子技术有限公司
+        /// Author  : Napoleon
         /// Created : 2015-01-07 20:03:23
-        public static void WriteCookie<T>(string strname, T t, int days = 1)
+        public static void WriteCookie<T>(this T t, string strname, int days = 1)
         {
             HttpCookie cookie = HttpContext.Current.Request.Cookies[strname];
             if (cookie == null)
+            {
                 cookie = new HttpCookie(strname);
-            cookie.Value = SerializeFunc.SerializeObject(t);
+            }
+            cookie.Value = t.SerializeObject();
             if (days > 0)
+            {
                 cookie.Expires = DateTime.Now.AddDays(days);
-
+            }
             HttpContext.Current.Response.AppendCookie(cookie);
         }
 
@@ -83,8 +82,7 @@ namespace Napoleon.PublicCommon
         ///  读取cookie值
         /// </summary>
         /// <param name="strname">The strname.</param>
-        /// Author  : 俞立钢
-        /// Company : 绍兴标点电子技术有限公司
+        /// Author  : Napoleon
         /// Created : 2015-01-07 20:03:23
         public static string ReadCookie(string strname)
         {
@@ -100,14 +98,13 @@ namespace Napoleon.PublicCommon
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="strname">The strname.</param>
-        /// Author  : 俞立钢
-        /// Company : 绍兴标点电子技术有限公司
+        /// Author  : Napoleon
         /// Created : 2015-01-07 20:03:23
-        public static T ReadCookieAsObj<T>(string strname) where T : class
+        public static T ReadCookie<T>(string strname) where T : class
         {
             if (HttpContext.Current.Request.Cookies[strname] != null)
             {
-                return SerializeFunc.DSerializeToObject<T>(HttpContext.Current.Request.Cookies[strname].Value);
+                return HttpContext.Current.Request.Cookies[strname].Value.DSerializeToObject<T>();
             }
             return default(T);
         }
@@ -116,8 +113,7 @@ namespace Napoleon.PublicCommon
         ///  删除cookie
         /// </summary>
         /// <param name="strname">The strname.</param>
-        /// Author  : 俞立钢
-        /// Company : 绍兴标点电子技术有限公司
+        /// Author  : Napoleon
         /// Created : 2015-01-07 20:03:23
         public static void DeleteCookie(string strname)
         {

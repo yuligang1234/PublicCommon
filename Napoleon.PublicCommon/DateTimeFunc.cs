@@ -11,8 +11,7 @@ namespace Napoleon.PublicCommon
         ///  得到本月的第一天日期
         /// </summary>
         /// <param name="isTime">是否有时间</param>
-        /// Author  : 俞立钢
-        /// Company : 绍兴标点电子技术有限公司
+        /// Author  : Napoleon
         /// Created : 2014-11-25 13:12:53
         public static DateTime GetFirstDayOfMonth(bool isTime)
         {
@@ -29,8 +28,7 @@ namespace Napoleon.PublicCommon
         ///  得到本月的最后一天的日期
         /// </summary>
         /// <param name="isTime">是否有时间</param>
-        /// Author  : 俞立钢
-        /// Company : 绍兴标点电子技术有限公司
+        /// Author  : Napoleon
         /// Created : 2014-11-25 13:12:53
         public static DateTime GetLastDayOfMonth(bool isTime)
         {
@@ -47,8 +45,7 @@ namespace Napoleon.PublicCommon
         ///  得到一个月的第一天
         /// </summary>
         /// <param name="someday">这个月的随便一天</param>
-        /// Author  : 俞立钢
-        /// Company : 绍兴标点电子技术有限公司
+        /// Author  : Napoleon
         /// Created : 2014-11-25 13:12:53
         private static DateTime GetFirstDayOfMonth(DateTime someday)
         {
@@ -61,8 +58,7 @@ namespace Napoleon.PublicCommon
         ///  得到一个月的最后一天
         /// </summary>
         /// <param name="someday">这个月的随便一天</param>
-        /// Author  : 俞立钢
-        /// Company : 绍兴标点电子技术有限公司
+        /// Author  : Napoleon
         /// Created : 2014-11-25 13:12:53
         private static DateTime GetLastDayOfMonth(DateTime someday)
         {
@@ -71,6 +67,8 @@ namespace Napoleon.PublicCommon
             DateTime result = someday.AddDays(ts);
             return result;
         }
+
+        
 
         #endregion
     }
