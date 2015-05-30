@@ -59,22 +59,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomId.cs" />
-    <Compile Include="EasyuiFunc.cs" />
-    <Compile Include="FormatFunc.cs" />
-    <Compile Include="BaseFields.cs" />
-    <Compile Include="CookieSessionFunc.cs" />
-    <Compile Include="DateTimeFunc.cs" />
-    <Compile Include="EncrypteFunc.cs" />
-    <Compile Include="IpFunc.cs" />
-    <Compile Include="NpoiFunc.cs" />
-    <Compile Include="OfiiceFunc.cs" />
+    <Compile Include="Base\CustomId.cs" />
+    <Compile Include="File\FileStreamFunc.cs" />
+    <Compile Include="Frame\EasyuiFunc.cs" />
+    <Compile Include="Format\FormatFunc.cs" />
+    <Compile Include="Field\BaseFields.cs" />
+    <Compile Include="Http\CookieSessionFunc.cs" />
+    <Compile Include="Base\DateTimeFunc.cs" />
+    <Compile Include="Cryptography\EncrypteFunc.cs" />
+    <Compile Include="Http\IpFunc.cs" />
+    <Compile Include="Http\WebClientFunc.cs" />
+    <Compile Include="Http\WebRequestFunc.cs" />
+    <Compile Include="Office\NpoiFunc.cs" />
+    <Compile Include="Office\OfiiceFunc.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SerializeFunc.cs" />
+    <Compile Include="Format\SerializeFunc.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
