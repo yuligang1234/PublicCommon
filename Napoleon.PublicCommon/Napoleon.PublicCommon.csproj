@@ -59,21 +59,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Base\CustomId.cs" />
-    <Compile Include="Frame\EasyuiFunc.cs" />
-    <Compile Include="File\FileStreamOperation.cs" />
-    <Compile Include="Format\FormatFunc.cs" />
-    <Compile Include="Filed\BaseFields.cs" />
-    <Compile Include="Http\CookieSessionFunc.cs" />
-    <Compile Include="Base\DateTimeFunc.cs" />
-    <Compile Include="Cryptography\EncryptFunc.cs" />
-    <Compile Include="Http\IpFunc.cs" />
-    <Compile Include="Office\NpoiFunc.cs" />
-    <Compile Include="Office\OfiiceFunc.cs" />
+    <Compile Include="CustomId.cs" />
+    <Compile Include="EasyuiFunc.cs" />
+    <Compile Include="FormatFunc.cs" />
+    <Compile Include="BaseFields.cs" />
+    <Compile Include="CookieSessionFunc.cs" />
+    <Compile Include="DateTimeFunc.cs" />
+    <Compile Include="EncrypteFunc.cs" />
+    <Compile Include="IpFunc.cs" />
+    <Compile Include="NpoiFunc.cs" />
+    <Compile Include="OfiiceFunc.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Format\SerializeFunc.cs" />
-    <Compile Include="Http\WebClientFunc.cs" />
-    <Compile Include="Http\WebRequestFunc.cs" />
+    <Compile Include="SerializeFunc.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
