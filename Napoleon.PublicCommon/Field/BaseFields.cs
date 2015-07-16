@@ -1,6 +1,16 @@
 ﻿
+// <summary>
+//  常用字段
+// </summary>
+// Author  : Napoleon
+// Created : 2015-06-10 15:06:33
 namespace Napoleon.PublicCommon.Field
 {
+    /// <summary>
+    ///  基础字段
+    /// </summary>
+    /// Author  : Napoleon
+    /// Created : 2015-07-15 08:40:09
     public static class BaseFields
     {
 
@@ -33,6 +43,20 @@ namespace Napoleon.PublicCommon.Field
         /// Author  : Napoleon
         /// Created : 2015-02-11 11:19:33
         public static string SymbolDoubleQuotes = "\"";
+
+        /// <summary>
+        ///  单斜杠
+        /// </summary>
+        /// Author  : Napoleon
+        /// Created : 2015-06-10 15:05:51
+        public static string SymbolSingleSlash = "\\";
+
+        /// <summary>
+        ///  双斜杠
+        /// </summary>
+        /// Author  : Napoleon
+        /// Created : 2015-06-10 15:06:27
+        public static string SymbolDoubleSlash = "\\\\";
 
         #endregion
 

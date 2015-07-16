@@ -1,0 +1,655 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Napoleon.PublicCommon</name>
+    </assembly>
+    <members>
+        <member name="M:Napoleon.PublicCommon.Base.CustomId.GetCustomId">
+            <summary>
+            获取字符串类型的主键
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Napoleon.PublicCommon.File.FileStreamFunc.StreamToBytes(System.IO.Stream)">
+            <summary>
+             将Stream转换成byte[]
+            </summary>
+            <param name="stream">The stream.</param>
+            Author  : Napoleon
+            Created : 2015-05-30 11:26:19
+        </member>
+        <member name="M:Napoleon.PublicCommon.File.FileStreamFunc.BytesToStream(System.Byte[])">
+            <summary>
+             将byte[]转换成stream
+            </summary>
+            <param name="bytes">The bytes.</param>
+            Author  : Napoleon
+            Created : 2015-05-30 11:26:37
+        </member>
+        <member name="M:Napoleon.PublicCommon.File.FileStreamFunc.StreamToFile(System.IO.Stream,System.String)">
+            <summary>
+             将stream转换成文件
+            </summary>
+            <param name="stream">The stream.</param>
+            <param name="fileName">c:/a.jpg</param>
+            Author  : Napoleon
+            Created : 2015-05-30 11:27:16
+        </member>
+        <member name="M:Napoleon.PublicCommon.File.FileStreamFunc.FileToStream(System.String)">
+            <summary>
+             将文件转换成stream
+            </summary>
+            <param name="fileName">c:/a.jpg</param>
+            Author  : Napoleon
+            Created : 2015-05-30 11:28:01
+        </member>
+        <member name="M:Napoleon.PublicCommon.Format.TransformFunc.StringToInt(System.String,System.Int32)">
+            <summary>
+             将string转换成int,int的默认值设置为0
+            </summary>
+            <param name="value">数值</param>
+            <param name="defaultNo">int默认值</param>
+            Author  : Napoleon
+            Created : 2015-06-19 11:14:58
+        </member>
+        <member name="M:Napoleon.PublicCommon.Format.TransformFunc.StringToTime(System.String,System.DateTime)">
+            <summary>
+             将DateTime转换成String
+            </summary>
+            <param name="value">数值</param>
+            <param name="defaultTime">默认时间</param>
+            Author  : Napoleon
+            Created : 2015-06-19 11:26:34
+        </member>
+        <member name="M:Napoleon.PublicCommon.Format.TransformFunc.StringToDecimal(System.String,System.Decimal)">
+            <summary>
+             将string转换成Decimal,Decimal的默认值设置为0
+            </summary>
+            <param name="value">数值</param>
+            <param name="defaultDecimal">Decimal的默认值</param>
+            Author  : Napoleon
+            Created : 2015-06-19 13:45:04
+        </member>
+        <member name="M:Napoleon.PublicCommon.Frame.EasyuiFunc.ConvertTableToGridJson(System.Data.DataTable,System.Int32)">
+            <summary>
+             将DataTable转换成json(DataGrid格式){"total":"10","rows":[{"name":"123","age":"12"},{"name":"lity","age":"32"}]}
+            </summary>
+            <param name="dt">DataTable</param>
+            <param name="total">total</param>
+            Author  : Napoleon
+            Created : 2014-09-03 15:10:23
+        </member>
+        <member name="M:Napoleon.PublicCommon.Frame.EasyuiFunc.ConvertToTreeJson(System.Data.DataTable,System.Boolean)">
+            <summary>
+             将DataTable转换成easyui使用的json
+            </summary>
+            <param name="dt">The dt.</param>
+            <param name="isChecked">The dt.</param>
+            Author  : Napoleon
+            Created : 2015-01-10 16:01:30
+        </member>
+        <member name="M:Napoleon.PublicCommon.Frame.EasyuiFunc.ChildTreeJson(System.Data.DataTable,System.String,System.Boolean)">
+            <summary>
+             子节点
+            </summary>
+            <param name="dt">The dt.</param>
+            <param name="parentId">The parent identifier.</param>
+            <param name="isChecked">isChecked</param>
+            Author  : Napoleon
+            Created : 2015-01-10 16:00:40
+        </member>
+        <member name="M:Napoleon.PublicCommon.Frame.EasyuiFunc.GetChildTable(System.Data.DataTable,System.String)">
+            <summary>
+             获取子菜单
+            </summary>
+            <param name="dt">The dt.</param>
+            <param name="id">The identifier.</param>
+            Author  : Napoleon
+            Created : 2015-01-10 15:57:54
+        </member>
+        <member name="M:Napoleon.PublicCommon.Frame.EasyuiFunc.ConvertToTreeGridJson(System.Data.DataTable,System.String)">
+            <summary>
+             将DataTable转换成easyui使用的json
+            </summary>
+            <param name="dt">The dt.</param>
+            <param name="icon">自定义图标的字段名称</param>
+            Author  : Napoleon
+            Created : 2015-01-10 16:01:30
+        </member>
+        <member name="M:Napoleon.PublicCommon.Frame.EasyuiFunc.ChildTreeGridJson(System.Data.DataTable,System.String,System.String)">
+            <summary>
+             子节点
+            </summary>
+            <param name="dt">The dt.</param>
+            <param name="parentId">The parent identifier.</param>
+            <param name="icon">自定义图标的字段名称</param>
+            Author  : Napoleon
+            Created : 2015-01-10 16:00:40
+        </member>
+        <member name="M:Napoleon.PublicCommon.Frame.EasyuiFunc.ConvertToComboboxJson(System.Data.DataTable,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+             下拉框数据格式
+            </summary>
+            <param name="dt">The dt.</param>
+            <param name="columnId">id的字段名称</param>
+            <param name="columnText">text的字段名称</param>
+            <param name="groupText">分组的字段名称</param>
+            <param name="defaultId">默认值的ID</param>
+            <param name="defaultText">默认值的Text</param>
+            Author  : Napoleon
+            Created : 2015-01-19 09:40:15
+        </member>
+        <member name="M:Napoleon.PublicCommon.Format.FormatFunc.FormatArray(System.String[],System.Char,System.Boolean)">
+            <summary>
+             数组转换通用类
+            </summary>
+            <param name="array">数组</param>
+            <param name="split">分隔符</param>
+            <param name="isQuote">是否需要引号</param>
+            Author  : Napoleon
+            Created : 2014-10-30 14:37:20
+        </member>
+        <member name="M:Napoleon.PublicCommon.Format.FormatFunc.SwitchArray(System.String)">
+            <summary>
+             将{1,2,3}转换成{'1','2','3'}
+            </summary>
+            <param name="array">The array.</param>
+            Author  : Napoleon
+            Created : 2015-05-30 11:20:04
+        </member>
+        <member name="T:Napoleon.PublicCommon.Field.BaseFields">
+            <summary>
+             基础字段
+            </summary>
+            Author  : Napoleon
+            Created : 2015-07-15 08:40:09
+        </member>
+        <member name="F:Napoleon.PublicCommon.Field.BaseFields.SymbolNewLine">
+            <summary>
+             换行符
+            </summary>
+            Author  : Napoleon
+            Created : 2015-02-11 11:09:59
+        </member>
+        <member name="F:Napoleon.PublicCommon.Field.BaseFields.SymbolBlank">
+            <summary>
+             空白符号
+            </summary>
+            Author  : Napoleon
+            Created : 2015-02-11 11:10:39
+        </member>
+        <member name="F:Napoleon.PublicCommon.Field.BaseFields.SymbolSigleQuotes">
+            <summary>
+             单引号
+            </summary>
+            Author  : Napoleon
+            Created : 2015-02-11 11:14:49
+        </member>
+        <member name="F:Napoleon.PublicCommon.Field.BaseFields.SymbolDoubleQuotes">
+            <summary>
+             双引号
+            </summary>
+            Author  : Napoleon
+            Created : 2015-02-11 11:19:33
+        </member>
+        <member name="F:Napoleon.PublicCommon.Field.BaseFields.SymbolSingleSlash">
+            <summary>
+             单斜杠
+            </summary>
+            Author  : Napoleon
+            Created : 2015-06-10 15:05:51
+        </member>
+        <member name="F:Napoleon.PublicCommon.Field.BaseFields.SymbolDoubleSlash">
+            <summary>
+             双斜杠
+            </summary>
+            Author  : Napoleon
+            Created : 2015-06-10 15:06:27
+        </member>
+        <member name="F:Napoleon.PublicCommon.Field.BaseFields.CommaSplit">
+            <summary>
+             分隔符(,)
+            </summary>
+            Author  : Napoleon
+            Created : 2014-08-15 16:27:13
+        </member>
+        <member name="F:Napoleon.PublicCommon.Field.BaseFields.BrSplit">
+            <summary>
+             分隔符(-)
+            </summary>
+            Author  : Napoleon
+            Created : 2014-10-30 10:38:05
+        </member>
+        <member name="F:Napoleon.PublicCommon.Field.BaseFields.UnderLineSplit">
+            <summary>
+             分隔符(_)
+            </summary>
+            Author  : Napoleon
+            Created : 2014-11-27 10:43:20
+        </member>
+        <member name="F:Napoleon.PublicCommon.Field.BaseFields.VerticalSplit">
+            <summary>
+             分隔符(|)
+            </summary>
+            Author  : Napoleon
+            Created : 2014-10-30 10:38:52
+        </member>
+        <member name="F:Napoleon.PublicCommon.Field.BaseFields.TimeFromat">
+            <summary>
+             时间格式
+            </summary>
+            Author  : Napoleon
+            Created : 2014-08-15 16:42:14
+        </member>
+        <member name="F:Napoleon.PublicCommon.Field.BaseFields.DateFromat">
+            <summary>
+             时间格式
+            </summary>
+            Author  : Napoleon
+            Created : 2014-08-15 16:42:14
+        </member>
+        <member name="F:Napoleon.PublicCommon.Field.BaseFields.ExeclTimeFromat">
+            <summary>
+             导出名称的时间格式
+            </summary>
+            Author  : Napoleon
+            Created : 2014-08-15 16:42:14
+        </member>
+        <member name="F:Napoleon.PublicCommon.Field.BaseFields.MbtIv">
+            <summary>
+             对称加密算法的初始化向量(IV)
+            </summary>
+            Author  : Napoleon
+            Created : 2014-12-11 14:46:59
+        </member>
+        <member name="F:Napoleon.PublicCommon.Field.BaseFields.Md5Replace">
+            <summary>
+             MD5字符替换
+            </summary>
+            Author  : Napoleon
+            Created : 2014-12-11 13:41:56
+        </member>
+        <member name="F:Napoleon.PublicCommon.Field.BaseFields.Sha1Replace">
+            <summary>
+             SHA1字符替换
+            </summary>
+            Author  : Napoleon
+            Created : 2014-12-11 13:41:56
+        </member>
+        <member name="F:Napoleon.PublicCommon.Field.BaseFields.Rc2">
+            <summary>
+             RC2密钥
+            </summary>
+            Author  : Napoleon
+            Created : 2015-01-07 13:54:10
+        </member>
+        <member name="M:Napoleon.PublicCommon.Http.CookieSessionFunc.SessionInsert(System.String,System.Object)">
+            <summary>
+             添加session
+            </summary>
+            <param name="sessionName">sessionName</param>
+            <param name="obj">object</param>
+            Author  : Napoleon
+            Created : 2014-10-31 10:38:13
+        </member>
+        <member name="M:Napoleon.PublicCommon.Http.CookieSessionFunc.SessionRemove(System.String)">
+            <summary>
+             移除session
+            </summary>
+            <param name="sessionName">sessionName</param>
+            Author  : Napoleon
+            Created : 2014-10-31 10:56:33
+        </member>
+        <member name="M:Napoleon.PublicCommon.Http.CookieSessionFunc.WriteCookie(System.String,System.String,System.Int32)">
+            <summary>
+             写cookie
+            </summary>
+            <param name="strname">cookie名称</param>
+            <param name="strvalue">cookie值</param>
+            <param name="days">保存天数</param>
+            Author  : Napoleon
+            Created : 2015-01-07 20:03:23
+        </member>
+        <member name="M:Napoleon.PublicCommon.Http.CookieSessionFunc.WriteCookie``1(``0,System.String,System.Int32)">
+            <summary>
+             写cookie
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="strname">The strname.</param>
+            <param name="t">The t.</param>
+            <param name="days">The days.</param>
+            Author  : Napoleon
+            Created : 2015-01-07 20:03:23
+        </member>
+        <member name="M:Napoleon.PublicCommon.Http.CookieSessionFunc.ReadCookie(System.String)">
+            <summary>
+             读取cookie值
+            </summary>
+            <param name="strname">The strname.</param>
+            Author  : Napoleon
+            Created : 2015-01-07 20:03:23
+        </member>
+        <member name="M:Napoleon.PublicCommon.Http.CookieSessionFunc.ReadCookie``1(System.String)">
+            <summary>
+             读取cookie并返回Entity
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="strname">The strname.</param>
+            Author  : Napoleon
+            Created : 2015-01-07 20:03:23
+        </member>
+        <member name="M:Napoleon.PublicCommon.Http.CookieSessionFunc.DeleteCookie(System.String)">
+            <summary>
+             删除cookie
+            </summary>
+            <param name="strname">The strname.</param>
+            Author  : Napoleon
+            Created : 2015-01-07 20:03:23
+        </member>
+        <member name="M:Napoleon.PublicCommon.Base.DateTimeFunc.GetFirstDayOfMonth(System.Boolean)">
+            <summary>
+             得到本月的第一天日期
+            </summary>
+            <param name="isTime">是否有时间</param>
+            Author  : Napoleon
+            Created : 2014-11-25 13:12:53
+        </member>
+        <member name="M:Napoleon.PublicCommon.Base.DateTimeFunc.GetLastDayOfMonth(System.Boolean)">
+            <summary>
+             得到本月的最后一天的日期
+            </summary>
+            <param name="isTime">是否有时间</param>
+            Author  : Napoleon
+            Created : 2014-11-25 13:12:53
+        </member>
+        <member name="M:Napoleon.PublicCommon.Base.DateTimeFunc.GetFirstDayOfMonth(System.DateTime)">
+            <summary>
+             得到一个月的第一天
+            </summary>
+            <param name="someday">这个月的随便一天</param>
+            Author  : Napoleon
+            Created : 2014-11-25 13:12:53
+        </member>
+        <member name="M:Napoleon.PublicCommon.Base.DateTimeFunc.GetLastDayOfMonth(System.DateTime)">
+            <summary>
+             得到一个月的最后一天
+            </summary>
+            <param name="someday">这个月的随便一天</param>
+            Author  : Napoleon
+            Created : 2014-11-25 13:12:53
+        </member>
+        <member name="M:Napoleon.PublicCommon.Cryptography.EncrypteFunc.GetMd5(System.String)">
+            <summary>
+             MD5加密
+            </summary>
+            <param name="value">明文</param>
+            Author  : Napoleon
+            Created : 2014-12-10 11:29:05
+        </member>
+        <member name="M:Napoleon.PublicCommon.Cryptography.EncrypteFunc.GetSha1(System.String)">
+            <summary>
+             SHA1加密
+            </summary>
+            <param name="value">明文</param>
+            Author  : Napoleon
+            Created : 2014-12-10 15:25:52
+        </member>
+        <member name="M:Napoleon.PublicCommon.Cryptography.EncrypteFunc.EncrypteMethod(System.String,System.Security.Cryptography.ICryptoTransform)">
+            <summary>
+             密钥算法通用加密方法
+            </summary>
+            <param name="value">明文</param>
+            <param name="cryptoTransform">加密器对象</param>
+            Author  : Napoleon
+            Created : 2014-12-11 14:44:11
+        </member>
+        <member name="M:Napoleon.PublicCommon.Cryptography.EncrypteFunc.DecrypteMethod(System.String,System.Security.Cryptography.ICryptoTransform)">
+            <summary>
+             密钥算法通用解密方法
+            </summary>
+            <param name="value">密文</param>
+            <param name="cryptoTransform">加密器对象</param>
+            Author  : Napoleon
+            Created : 2014-12-11 14:44:11
+        </member>
+        <member name="M:Napoleon.PublicCommon.Cryptography.EncrypteFunc.EncrypteDes(System.String,System.String)">
+            <summary>
+             DES加密
+            </summary>
+            <param name="value">明文</param>
+            <param name="key">密钥</param>
+            Author  : Napoleon
+            Created : 2014-12-11 13:44:46
+        </member>
+        <member name="M:Napoleon.PublicCommon.Cryptography.EncrypteFunc.DecrypteDes(System.String,System.String)">
+            <summary>
+             DES解密
+            </summary>
+            <param name="value">密文</param>
+            <param name="key">密钥</param>
+            Author  : Napoleon
+            Created : 2014-12-11 14:31:15
+        </member>
+        <member name="M:Napoleon.PublicCommon.Cryptography.EncrypteFunc.EncrypteRc2(System.String,System.String)">
+            <summary>
+             RC2加密
+            </summary>
+            <param name="value">明文</param>
+            <param name="key">密钥</param>
+            Author  : Napoleon
+            Created : 2014-12-11 13:44:46
+        </member>
+        <member name="M:Napoleon.PublicCommon.Cryptography.EncrypteFunc.DecrypteRc2(System.String,System.String)">
+            <summary>
+             RC2解密
+            </summary>
+            <param name="value">密文</param>
+            <param name="key">密钥</param>
+            Author  : Napoleon
+            Created : 2014-12-11 14:31:15
+        </member>
+        <member name="M:Napoleon.PublicCommon.Cryptography.EncrypteFunc.EncrypteAes(System.String,System.String)">
+            <summary>
+             AES加密
+            </summary>
+            <param name="value">明文</param>
+            <param name="key">密钥</param>
+            Author  : Napoleon
+            Created : 2014-12-11 13:44:46
+        </member>
+        <member name="M:Napoleon.PublicCommon.Cryptography.EncrypteFunc.DecrypteAes(System.String,System.String)">
+            <summary>
+             AES解密
+            </summary>
+            <param name="value">密文</param>
+            <param name="key">密钥</param>
+            Author  : Napoleon
+            Created : 2014-12-11 14:31:15
+        </member>
+        <member name="M:Napoleon.PublicCommon.Http.IpFunc.GetIp">
+            <summary>
+             获取ip地址
+            </summary>
+            Author  : Napoleon
+            Created : 2015-01-12 15:05:27
+        </member>
+        <member name="M:Napoleon.PublicCommon.Http.IpFunc.GetHostName">
+            <summary>
+             获取电脑名称
+            </summary>
+            Author  : Napoleon
+            Created : 2015-01-26 14:26:36
+        </member>
+        <member name="M:Napoleon.PublicCommon.Http.IpFunc.GetLocalMacAddress">
+            <summary>
+             获取本机MAC地址(服务器端)
+            </summary>
+            Author  : Napoleon
+            Created : 2015-01-26 14:29:22
+        </member>
+        <member name="T:Napoleon.PublicCommon.Http.HttpMethod">
+            <summary>
+             提交请求的方式
+            </summary>
+            Author  : Napoelon
+            Created : 2014-10-18 14:12:38
+        </member>
+        <member name="M:Napoleon.PublicCommon.Http.WebClientFunc.RequestUpDownData(System.String,Napoleon.PublicCommon.Http.HttpMethod,System.String)">
+            <summary>
+             获取数据（GET/POST）
+            </summary>
+            <param name="url">URL</param>
+            <param name="method">(get/post)</param>
+            <param name="parameter">参数</param>
+            Author  : Napoelon
+            Created : 2014-10-18 13:55:48
+        </member>
+        <member name="M:Napoleon.PublicCommon.Http.WebClientFunc.RequestUploadFile(System.String,System.String,System.String)">
+            <summary>
+             上传文件，并返回结果
+            </summary>
+            <param name="httpUrl">The HTTP URL.</param>
+            <param name="method">The method.</param>
+            <param name="fileUrl">The file URL.</param>
+            Author  : Napoleon
+            Created : 2014-10-18 14:29:28
+        </member>
+        <member name="M:Napoleon.PublicCommon.Http.WebClientFunc.RequestUploadData(System.String,System.String,System.Byte[])">
+            <summary>
+             上传文件，并返回结果
+            </summary>
+            <param name="httpUrl">The HTTP URL.</param>
+            <param name="method">The method.</param>
+            <param name="bytes">The file URL.</param>
+            Author  : Napoleon
+            Created : 2014-10-18 14:29:28
+        </member>
+        <member name="M:Napoleon.PublicCommon.Http.WebClientFunc.RequestUploadString(System.String,System.String,System.String)">
+            <summary>
+             上传文件，并返回结果
+            </summary>
+            <param name="httpUrl">The HTTP URL.</param>
+            <param name="method">The method.</param>
+            <param name="json">The file URL.</param>
+            Author  : Napoleon
+            Created : 2014-10-18 14:29:28
+        </member>
+        <member name="M:Napoleon.PublicCommon.Http.WebClientFunc.RequestDownloadFile(System.String,System.String)">
+            <summary>
+             下载文件
+            </summary>
+            <param name="httpUrl">httpUrl</param>
+            <param name="fileUrl">fileUrl</param>
+            Author  : Napoleon
+            Created : 2014-10-18 14:38:41
+        </member>
+        <member name="T:Napoleon.PublicCommon.Http.FormItem">
+            <summary>
+             表单参数
+            </summary>
+            Author  : Napoleon
+            Created : 2015-05-30 10:53:07
+        </member>
+        <member name="T:Napoleon.PublicCommon.Http.ParamType">
+            <summary>
+             参数类型
+            </summary>
+            Author  : Napoleon
+            Created : 2015-05-30 10:55:29
+        </member>
+        <member name="F:Napoleon.PublicCommon.Http.ParamType.Text">
+            
+             文本类型
+            
+        </member>
+        <member name="F:Napoleon.PublicCommon.Http.ParamType.File">
+            
+             文件类型(路径,c:\a.jpg)
+            
+        </member>
+        <member name="M:Napoleon.PublicCommon.Http.WebRequestFunc.PostFormData(System.Collections.Generic.List{Napoleon.PublicCommon.Http.FormItem},System.String,System.Text.Encoding)">
+            <summary>
+             模拟form表单提交
+            </summary>
+            <param name="list">表单参数</param>
+            <param name="httpUrl">提交地址</param>
+            <param name="encoding">编码方式</param>
+            Author  : Napoleon
+            Created : 2015-05-29 16:30:55
+        </member>
+        <member name="M:Napoleon.PublicCommon.Http.WebRequestFunc.PostJsonData(System.String,Napoleon.PublicCommon.Http.HttpMethod,System.String,System.String)">
+            <summary>
+             提交json数据
+            </summary>
+            <param name="method">提交方式</param>
+            <param name="httpUrl">提交地址</param>
+            <param name="parameter">参数/json/数值等</param>
+            <param name="encoding">编码方式(UTF-8,GB2312等)</param>
+            Author  : Napoleon
+            Created : 2015-05-29 16:34:48
+        </member>
+        <member name="M:Napoleon.PublicCommon.Office.NpoiFunc.CreateSheet(System.Data.DataTable,System.String[],System.String[],System.String)">
+            <summary>
+             创建工作簿
+            MemoryStream fileStream = dt.CreateSheet("", titles);
+            fileStream.Seek(0, SeekOrigin.Begin);
+            File(fileStream, "application/vnd.ms-excel", PublicFields.LogExcelName);
+            </summary>
+            <param name="dt">数据集</param>
+            <param name="topTitle">大标题</param>
+            <param name="titles">标题</param>
+            <param name="titleFileds">字段</param>
+            Author  : Napoleon
+            Created : 2015-01-15 13:59:30
+        </member>
+        <member name="M:Napoleon.PublicCommon.Office.OfiiceFunc.Excel(System.Data.DataTable,System.String,System.String[],System.String[],System.Boolean,System.String[],System.String)">
+            <summary>
+             导出的Execl样式设置
+            </summary>
+            <param name="dt">数据源</param>
+            <param name="topTitle">大标题</param>
+            <param name="columns">显示列</param>
+            <param name="titles">标题</param>
+            <param name="isId">是否显示自增长序号</param>
+            <param name="footerRow">总计等</param>
+            <param name="footerValue">页脚</param>
+            Author  : Napoleon
+            Created : 2015-01-15 14:25:38
+        </member>
+        <member name="M:Napoleon.PublicCommon.Format.SerializeFunc.DeserializeJsonToList``1(System.String)">
+            <summary>
+             json序列化为实体类
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="json">The json.</param>
+            Author  : Napoleon
+            Created : 2014-10-28 14:15:41
+        </member>
+        <member name="M:Napoleon.PublicCommon.Format.SerializeFunc.SerializeListToJson``1(``0)">
+            <summary>
+             实体类序列化为json
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="t">The t.</param>
+            Author  : Napoleon
+            Created : 2014-10-28 14:30:14
+        </member>
+        <member name="M:Napoleon.PublicCommon.Format.SerializeFunc.SerializeObject(System.Object)">
+            <summary>
+             序列化为字节流
+            </summary>
+            <param name="obj">The object.</param>
+            Author  : Napoleon
+            Created : 2015-01-13 11:12:19
+        </member>
+        <member name="M:Napoleon.PublicCommon.Format.SerializeFunc.DSerializeToObject``1(System.String)">
+            <summary>
+             反序列化字节流
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="str">The string.</param>
+            Author  : Napoleon
+            Created : 2015-01-17 13:41:40
+        </member>
+    </members>
+</doc>

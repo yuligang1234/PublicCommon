@@ -18,15 +18,17 @@ namespace Napoleon.PublicCommon.Http
             string ip = string.Empty;
             if (HttpContext.Current != null)
             {
-                if (HttpContext.Current.Request.ServerVariables["HTTP_VIA"] != null) // 服务器
+                //判断客户端是否使用了代理(不一定能判断出来)
+                if (HttpContext.Current.Request.ServerVariables["HTTP_VIA"] != null) 
                 {
                     //得到真实的客户端地址
                     ip = HttpContext.Current.Request.ServerVariables["HTTP_X_FORWARDED_FOR"];
                 }
-                else//如果没有使用代理服务器或者得不到客户端的
+                else//如果没有使用代理服务器
                 {
+                    ip = HttpContext.Current.Request.UserHostAddress;
                     //得到服务端的地址要判断  System.Web.HttpContext.Current 为空的情况
-                    ip = HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"];
+                    //ip = HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"];
                 }
             }
             return ip;
@@ -43,7 +45,7 @@ namespace Napoleon.PublicCommon.Http
         }
 
         /// <summary>
-        ///  获取本机MAC地址
+        ///  获取本机MAC地址(服务器端)
         /// </summary>
         /// Author  : Napoleon
         /// Created : 2015-01-26 14:29:22

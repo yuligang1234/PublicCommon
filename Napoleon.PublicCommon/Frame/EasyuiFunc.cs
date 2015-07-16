@@ -29,7 +29,7 @@ namespace Napoleon.PublicCommon.Frame
                     json.Append("{");
                     foreach (DataColumn column in dt.Columns)
                     {
-                        json.AppendFormat("\"{0}\":\"{1}\",", column.ColumnName, row[column].ToString().Replace(BaseFields.SymbolNewLine, BaseFields.SymbolBlank).Replace(BaseFields.SymbolDoubleQuotes, BaseFields.SymbolSigleQuotes));//去掉换行符,替换"符号
+                        json.AppendFormat("\"{0}\":\"{1}\",", column.ColumnName, row[column].ToString().Replace(BaseFields.SymbolNewLine, BaseFields.SymbolBlank).Replace(BaseFields.SymbolDoubleQuotes, BaseFields.SymbolSigleQuotes).Replace(BaseFields.SymbolSingleSlash, BaseFields.SymbolDoubleSlash));//换行符-空白,引号-单引号,单斜杠-双斜杠
                     }
                     json.Remove(json.Length - 1, 1);
                     json.Append("},");
@@ -56,7 +56,10 @@ namespace Napoleon.PublicCommon.Frame
         {
             StringBuilder json = new StringBuilder();
             json.Append("[");
-            json.Append(ChildTreeJson(dt, "0", isChecked));//父节点为0
+            if (dt.Rows.Count > 0)
+            {
+                json.Append(ChildTreeJson(dt, "0", isChecked));//父节点为0
+            }
             json.Append("]");
             return json.ToString();
         }
@@ -141,7 +144,10 @@ namespace Napoleon.PublicCommon.Frame
         {
             StringBuilder json = new StringBuilder();
             json.Append("[");
-            json.Append(ChildTreeGridJson(dt, "0", icon));//父节点为0
+            if (dt.Rows.Count > 0)
+            {
+                json.Append(ChildTreeGridJson(dt, "0", icon));//父节点为0
+            }
             json.Append("]");
             return json.ToString();
         }
@@ -197,12 +203,21 @@ namespace Napoleon.PublicCommon.Frame
         /// <param name="columnId">id的字段名称</param>
         /// <param name="columnText">text的字段名称</param>
         /// <param name="groupText">分组的字段名称</param>
+        /// <param name="defaultId">默认值的ID</param>
+        /// <param name="defaultText">默认值的Text</param>
         /// Author  : Napoleon
         /// Created : 2015-01-19 09:40:15
-        public static string ConvertToComboboxJson(this DataTable dt, string columnId, string columnText, string groupText = "")
+        public static string ConvertToComboboxJson(this DataTable dt, string columnId, string columnText, string groupText = "", string defaultId = "0", string defaultText = "")
         {
             StringBuilder json = new StringBuilder();
             json.Append("[");
+            if (!defaultId.Equals("0") || !defaultText.Equals(""))//设置默认值
+            {
+                json.Append("{");
+                json.AppendFormat("\"id\":\"{0}\"", defaultId);
+                json.AppendFormat(",\"text\":\"{0}\"", defaultText);
+                json.Append("},");
+            }
             if (dt.Rows.Count > 0)//如果不判断的话，在dt没有数据的情况下，会出现格式错误{[]}
             {
                 foreach (DataRow row in dt.Rows)
@@ -216,6 +231,9 @@ namespace Napoleon.PublicCommon.Frame
                     }
                     json.Append("},");
                 }
+            }
+            if (json.ToString().Length > 1)
+            {
                 json.Remove(json.Length - 1, 1);
             }
             json.Append("]");

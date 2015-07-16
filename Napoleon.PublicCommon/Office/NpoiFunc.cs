@@ -1,6 +1,7 @@
 ﻿
 using System.Data;
 using System.IO;
+using System.Text;
 using NPOI.HSSF.UserModel;
 using NPOI.SS.UserModel;
 using NPOI.SS.Util;
@@ -22,7 +23,7 @@ namespace Napoleon.PublicCommon.Office
         /// <param name="titleFileds">字段</param>
         /// Author  : Napoleon
         /// Created : 2015-01-15 13:59:30
-        public static MemoryStream CreateSheet(this DataTable dt, string[] titles, string[] titleFileds,
+        public static MemoryStream CreateSheet(DataTable dt, string[] titles, string[] titleFileds,
             string topTitle = "")
         {
             MemoryStream ms = new MemoryStream();
@@ -61,6 +62,7 @@ namespace Napoleon.PublicCommon.Office
             ICellStyle contentStyle = workbook.CreateCellStyle(); //单元格样式
             contentStyle.Alignment = HorizontalAlignment.Center; //水平居中
             contentStyle.VerticalAlignment = VerticalAlignment.Center; //垂直居中
+            contentStyle.WrapText = true;//换行
             IFont contentFont = workbook.CreateFont(); //字体样式
             contentFont.FontName = "宋体";
             contentFont.FontHeightInPoints = 12;
@@ -73,9 +75,9 @@ namespace Napoleon.PublicCommon.Office
             //创建一个名称为sheet1的工作表
             ISheet sheet = workbook.CreateSheet("sheet1");
             int rowIndex = 0; //从第一行开始
+            //大标题
             if (!string.IsNullOrWhiteSpace(topTitle))
             {
-                //大标题
                 IRow topRow = sheet.CreateRow(rowIndex);
                 ICell topCell = topRow.CreateCell(0);
                 topCell.CellStyle = topTitleStyle;
@@ -83,9 +85,9 @@ namespace Napoleon.PublicCommon.Office
                 sheet.AddMergedRegion(new CellRangeAddress(0, 0, 0, dt.Columns.Count));
                 rowIndex++;
             }
+            //小标题
             if (titles != null)
             {
-                //标题
                 IRow headerRow = sheet.CreateRow(rowIndex);
                 //循环添加标题
                 foreach (string title in titles)
@@ -97,25 +99,40 @@ namespace Napoleon.PublicCommon.Office
                 }
                 rowIndex++;
             }
-            // 内容
+            //内容
             foreach (DataRow row in dt.Rows)
             {
                 IRow newRow = sheet.CreateRow(rowIndex);
-                count = 0;
                 //循环添加列的对应内容
-                foreach (string titleField in titleFileds)
+                for (int i = 0; i < titleFileds.Length; i++)
                 {
-                    ICell cell = newRow.CreateCell(count);
+                    ICell cell = newRow.CreateCell(i);
                     cell.CellStyle = contentStyle;
-                    cell.SetCellValue(row[titleField].ToString());
-                    count++;
+                    cell.SetCellValue(row[titleFileds[i]].ToString());
                 }
                 rowIndex++;
             }
-            //列宽自适应
-            for (int i = 0; i <= dt.Rows.Count; i++)
+            //设置宽度
+            for (int columnNum = 0; columnNum < titleFileds.Length; columnNum++)
             {
-                sheet.AutoSizeColumn(i, false);
+                int columnWidth = sheet.GetColumnWidth(columnNum) / 256;//获取当前列宽度
+                for (int rowNum = 0; rowNum < sheet.LastRowNum; rowNum++)
+                {
+                    IRow currentRow = sheet.GetRow(rowNum);
+                    ICell currentCell = currentRow.GetCell(columnNum);
+                    int length = Encoding.UTF8.GetBytes(currentCell.ToString()).Length;//获取当前单元格的内容宽度
+                    //若当前单元格内容宽度大于列宽，则调整列宽为当前单元格宽度
+                    if (columnWidth < length)
+                    {
+                        columnWidth = length;
+                    }
+                    //宽度最高为255个字符
+                    if (columnWidth > 250)
+                    {
+                        columnWidth = 250;
+                    }
+                }
+                sheet.SetColumnWidth(columnNum, (columnWidth + 2) * 256);
             }
             //将表内容写入流 通知浏览器下载
             workbook.Write(ms);
