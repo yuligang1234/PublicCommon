@@ -23,7 +23,7 @@ namespace Napoleon.PublicCommon.Office
         /// <param name="titleFileds">字段</param>
         /// Author  : Napoleon
         /// Created : 2015-01-15 13:59:30
-        public static MemoryStream CreateSheet(DataTable dt, string[] titles, string[] titleFileds,
+        public static MemoryStream CreateSheet(this DataTable dt, string[] titles, string[] titleFileds,
             string topTitle = "")
         {
             MemoryStream ms = new MemoryStream();

@@ -5,3 +5,5 @@
 2015-05-30:添加WebClient,File,WebRequest函数,优化模块分类.
 
 2015-07-16:修正NPOI中由于自适应宽度而使导出速度变慢的问题.
+
+2016-01-18:优化上传下载(包括webclient和webrequest)方法,能够将json数据POST提交.

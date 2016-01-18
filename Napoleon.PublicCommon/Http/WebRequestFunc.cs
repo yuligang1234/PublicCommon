@@ -128,19 +128,20 @@ namespace Napoleon.PublicCommon.Http
         }
 
         /// <summary>
-        ///  提交json数据
+        ///  form提交数据
         /// </summary>
-        /// <param name="method">提交方式</param>
         /// <param name="httpUrl">提交地址</param>
         /// <param name="parameter">参数/json/数值等</param>
+        /// <param name="method">提交方式</param>
         /// <param name="encoding">编码方式(UTF-8,GB2312等)</param>
+        /// <param name="contentType">提交数据类型</param>
         /// Author  : Napoleon
         /// Created : 2015-05-29 16:34:48
-        public static string PostJsonData(this string httpUrl, HttpMethod method, string parameter, string encoding)
+        public static string PostJsonData(this string httpUrl, string parameter, HttpMethod method = HttpMethod.Post, string encoding = "UTF-8", string contentType = ContentTypes.FormType)
         {
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(httpUrl);
             request.Method = method.ToString();
-            request.ContentType = "application/x-www-form-urlencoded;";
+            request.ContentType = contentType;
             byte[] payload = Encoding.GetEncoding(encoding).GetBytes(parameter);
             request.ContentLength = payload.Length;
             Stream writer = request.GetRequestStream();

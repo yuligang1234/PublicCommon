@@ -157,6 +157,21 @@
             Author  : Napoleon
             Created : 2015-05-30 11:20:04
         </member>
+        <member name="M:Napoleon.PublicCommon.Format.FormatFunc.NoHtml(System.String)">
+            <summary>
+             去除HTML标记
+            </summary>
+            <returns>已经去除后的文字</returns>
+            Author  : Napoleon
+            Created : 2015-10-29 09:52:45
+        </member>
+        <member name="M:Napoleon.PublicCommon.Format.FormatFunc.CreateValidateGraphic(System.String@,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+             产生图形验证码
+            </summary>
+            Author  : Napoleon
+            Created : 2015-11-04 20:47:48
+        </member>
         <member name="T:Napoleon.PublicCommon.Field.BaseFields">
             <summary>
              基础字段
@@ -494,13 +509,22 @@
             Author  : Napoelon
             Created : 2014-10-18 14:12:38
         </member>
-        <member name="M:Napoleon.PublicCommon.Http.WebClientFunc.RequestUpDownData(System.String,Napoleon.PublicCommon.Http.HttpMethod,System.String)">
+        <member name="T:Napoleon.PublicCommon.Http.ContentTypes">
+            <summary>
+             格式类型
+            </summary>
+            Author  : Napoleon
+            Created : 2016-01-18 22:03:44
+        </member>
+        <member name="M:Napoleon.PublicCommon.Http.WebClientFunc.RequestUpDownData(System.String,System.String,Napoleon.PublicCommon.Http.HttpMethod,System.String,System.String)">
             <summary>
              获取数据（GET/POST）
             </summary>
             <param name="url">URL</param>
-            <param name="method">(get/post)</param>
             <param name="parameter">参数</param>
+            <param name="method">提交方式(默认get)</param>
+            <param name="encoding">编码方式(默认utf-8)</param>
+            <param name="contentType">数据类型(默认json)</param>
             Author  : Napoelon
             Created : 2014-10-18 13:55:48
         </member>
@@ -516,21 +540,23 @@
         </member>
         <member name="M:Napoleon.PublicCommon.Http.WebClientFunc.RequestUploadData(System.String,System.String,System.Byte[])">
             <summary>
-             上传文件，并返回结果
+             上传数据，并返回结果
             </summary>
             <param name="httpUrl">The HTTP URL.</param>
             <param name="method">The method.</param>
-            <param name="bytes">The file URL.</param>
+            <param name="bytes">参数</param>
             Author  : Napoleon
             Created : 2014-10-18 14:29:28
         </member>
-        <member name="M:Napoleon.PublicCommon.Http.WebClientFunc.RequestUploadString(System.String,System.String,System.String)">
+        <member name="M:Napoleon.PublicCommon.Http.WebClientFunc.RequestUploadJson(System.String,System.String,System.String,System.String,System.String)">
             <summary>
-             上传文件，并返回结果
+             上传数据，并返回结果
             </summary>
-            <param name="httpUrl">The HTTP URL.</param>
-            <param name="method">The method.</param>
-            <param name="json">The file URL.</param>
+            <param name="httpUrl">URL</param>
+            <param name="json">参数格式(json格式)</param>
+            <param name="method">提交方式(默认post)</param>
+            <param name="contentType">数据类型(默认json)</param>
+            <param name="encoding">编码格式</param>
             Author  : Napoleon
             Created : 2014-10-18 14:29:28
         </member>
@@ -577,14 +603,15 @@
             Author  : Napoleon
             Created : 2015-05-29 16:30:55
         </member>
-        <member name="M:Napoleon.PublicCommon.Http.WebRequestFunc.PostJsonData(System.String,Napoleon.PublicCommon.Http.HttpMethod,System.String,System.String)">
+        <member name="M:Napoleon.PublicCommon.Http.WebRequestFunc.PostJsonData(System.String,System.String,Napoleon.PublicCommon.Http.HttpMethod,System.String,System.String)">
             <summary>
-             提交json数据
+             form提交数据
             </summary>
-            <param name="method">提交方式</param>
             <param name="httpUrl">提交地址</param>
             <param name="parameter">参数/json/数值等</param>
+            <param name="method">提交方式</param>
             <param name="encoding">编码方式(UTF-8,GB2312等)</param>
+            <param name="contentType">提交数据类型</param>
             Author  : Napoleon
             Created : 2015-05-29 16:34:48
         </member>
