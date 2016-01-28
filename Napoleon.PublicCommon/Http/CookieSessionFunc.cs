@@ -14,12 +14,14 @@ namespace Napoleon.PublicCommon.Http
         /// </summary>
         /// <param name="sessionName">sessionName</param>
         /// <param name="obj">object</param>
+        /// <param name="timeout">过期时间(默认一小时)</param>
         /// Author  : Napoleon
         /// Created : 2014-10-31 10:38:13
-        public static void SessionInsert(this string sessionName, object obj)
+        public static void SessionInsert(this string sessionName, object obj, int timeout = 60)
         {
             SessionRemove(sessionName);
             HttpContext.Current.Session.Add(sessionName, obj);
+            HttpContext.Current.Session.Timeout = timeout;
         }
 
         /// <summary>
@@ -34,6 +36,17 @@ namespace Napoleon.PublicCommon.Http
             {
                 HttpContext.Current.Session.Remove(sessionName);
             }
+        }
+
+        /// <summary>
+        ///  获取session
+        /// </summary>
+        /// <param name="sessionName">sessionName</param>
+        /// Author  : Napoleon
+        /// Created : 2014-10-31 10:56:33
+        public static object GetSession(this string sessionName)
+        {
+            return HttpContext.Current.Session[sessionName];
         }
 
         /// <summary>

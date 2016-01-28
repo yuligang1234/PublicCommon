@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base\CustomId.cs" />
+    <Compile Include="Cryptography\CreateHash.cs" />
     <Compile Include="File\FileStreamFunc.cs" />
     <Compile Include="Format\TransformFunc.cs" />
     <Compile Include="Frame\EasyuiFunc.cs" />

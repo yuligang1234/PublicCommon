@@ -10,6 +10,22 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="T:Napoleon.PublicCommon.Cryptography.HashType">
+            <summary>
+             算法类型
+            </summary>
+            Author  : Napoleon
+            Created : 2016-01-28 22:03:13
+        </member>
+        <member name="M:Napoleon.PublicCommon.Cryptography.CreateHash.HashFile(System.String,Napoleon.PublicCommon.Cryptography.HashType)">
+            <summary>
+             计算文件Hash值,默认为MD5
+            </summary>
+            <param name="fileName">文件完整路径</param>
+            <param name="hashType">算法类型(默认MD5)</param>
+            Author  : Napoleon
+            Created : 2016-01-28 22:05:02
+        </member>
         <member name="M:Napoleon.PublicCommon.File.FileStreamFunc.StreamToBytes(System.IO.Stream)">
             <summary>
              将Stream转换成byte[]
@@ -298,18 +314,27 @@
             Author  : Napoleon
             Created : 2015-01-07 13:54:10
         </member>
-        <member name="M:Napoleon.PublicCommon.Http.CookieSessionFunc.SessionInsert(System.String,System.Object)">
+        <member name="M:Napoleon.PublicCommon.Http.CookieSessionFunc.SessionInsert(System.String,System.Object,System.Int32)">
             <summary>
              添加session
             </summary>
             <param name="sessionName">sessionName</param>
             <param name="obj">object</param>
+            <param name="timeout">过期时间(默认一小时)</param>
             Author  : Napoleon
             Created : 2014-10-31 10:38:13
         </member>
         <member name="M:Napoleon.PublicCommon.Http.CookieSessionFunc.SessionRemove(System.String)">
             <summary>
              移除session
+            </summary>
+            <param name="sessionName">sessionName</param>
+            Author  : Napoleon
+            Created : 2014-10-31 10:56:33
+        </member>
+        <member name="M:Napoleon.PublicCommon.Http.CookieSessionFunc.GetSession(System.String)">
+            <summary>
+             获取session
             </summary>
             <param name="sessionName">sessionName</param>
             Author  : Napoleon
