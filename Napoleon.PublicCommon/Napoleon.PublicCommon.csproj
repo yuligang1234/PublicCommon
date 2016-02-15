@@ -68,7 +68,9 @@
     <Compile Include="Frame\EasyuiFunc.cs" />
     <Compile Include="Format\FormatFunc.cs" />
     <Compile Include="Field\BaseFields.cs" />
-    <Compile Include="Http\CookieSessionFunc.cs" />
+    <Compile Include="Http\CacheFunc.cs" />
+    <Compile Include="Http\CookieFunc.cs" />
+    <Compile Include="Http\SessionFunc.cs" />
     <Compile Include="Base\DateTimeFunc.cs" />
     <Compile Include="Cryptography\EncrypteFunc.cs" />
     <Compile Include="Http\IpFunc.cs" />

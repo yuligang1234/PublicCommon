@@ -9,3 +9,5 @@
 2016-01-18:优化上传下载(包括webclient和webrequest)方法,能够将json数据POST提交.
 
 2016-01-28:新增计算文件MD5,SHA1值的函数.
+
+2016-02-15:新增cache函数,重构cookie和session函数.
