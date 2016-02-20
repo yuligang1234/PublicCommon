@@ -314,6 +314,50 @@
             Author  : Napoleon
             Created : 2015-01-07 13:54:10
         </member>
+        <member name="M:Napoleon.PublicCommon.Frame.SharpConfigFunc.GetConfig(System.String,System.String)">
+            <summary>
+             读取xml通用类
+            </summary>
+            <param name="fileName">文件名称</param>
+            <param name="section">节点</param>
+            Author  : Napoleon
+            Created : 2016-02-20 09:43:31
+        </member>
+        <member name="M:Napoleon.PublicCommon.Frame.SharpConfigFunc.GetConfigString(System.String,System.String,System.String)">
+            <summary>
+             读取string
+            </summary>
+            Author  : Napoleon
+            Created : 2016-02-20 09:57:32
+        </member>
+        <member name="M:Napoleon.PublicCommon.Frame.SharpConfigFunc.GetConfigInt(System.String,System.String,System.String)">
+            <summary>
+             读取int
+            </summary>
+            Author  : Napoleon
+            Created : 2016-02-20 09:57:51
+        </member>
+        <member name="M:Napoleon.PublicCommon.Frame.SharpConfigFunc.GetConfigBool(System.String,System.String,System.String)">
+            <summary>
+             读取bool
+            </summary>
+            Author  : Napoleon
+            Created : 2016-02-20 10:07:34
+        </member>
+        <member name="M:Napoleon.PublicCommon.Frame.SharpConfigFunc.GetConfigFloat(System.String,System.String,System.String)">
+            <summary>
+             读取float
+            </summary>
+            Author  : Napoleon
+            Created : 2016-02-20 10:07:48
+        </member>
+        <member name="M:Napoleon.PublicCommon.Frame.SharpConfigFunc.GetConfigDouble(System.String,System.String,System.String)">
+            <summary>
+             读取double
+            </summary>
+            Author  : Napoleon
+            Created : 2016-02-20 10:07:58
+        </member>
         <member name="M:Napoleon.PublicCommon.Http.CacheFunc.InsertSlidingCache(System.String,System.Object,System.Web.Caching.CacheDependency,System.Double,System.Web.Caching.CacheItemPriority)">
             <summary>
              写入缓存(相对过期)

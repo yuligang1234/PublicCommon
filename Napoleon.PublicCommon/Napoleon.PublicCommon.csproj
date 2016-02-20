@@ -49,6 +49,10 @@
     <Reference Include="NPOI.OpenXmlFormats">
       <HintPath>..\packages\NPOI.2.1.3\lib\net40\NPOI.OpenXmlFormats.dll</HintPath>
     </Reference>
+    <Reference Include="SharpConfig, Version=1.4.9.0, Culture=neutral, PublicKeyToken=c1deedac91bd7724, processorArchitecture=MSIL">
+      <HintPath>..\packages\sharpconfig.1.4.9\lib\net20\SharpConfig.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -68,6 +72,7 @@
     <Compile Include="Frame\EasyuiFunc.cs" />
     <Compile Include="Format\FormatFunc.cs" />
     <Compile Include="Field\BaseFields.cs" />
+    <Compile Include="Frame\SharpConfigFunc.cs" />
     <Compile Include="Http\CacheFunc.cs" />
     <Compile Include="Http\CookieFunc.cs" />
     <Compile Include="Http\SessionFunc.cs" />
