@@ -4,6 +4,11 @@ using System.Web.Caching;
 
 namespace Napoleon.PublicCommon.Http
 {
+    /// <summary>
+    ///  尽量使用HttpRuntime,不使用HttpContext.Current(在多线程下后者为null)
+    /// </summary>
+    /// Author  : Napoleon
+    /// Created : 2016-03-28 10:50:28
     public static class CacheFunc
     {
 

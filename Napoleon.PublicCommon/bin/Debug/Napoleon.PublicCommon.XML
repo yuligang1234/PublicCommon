@@ -26,6 +26,30 @@
             Author  : Napoleon
             Created : 2016-01-28 22:05:02
         </member>
+        <member name="M:Napoleon.PublicCommon.File.FilePathFunc.GetBasePath(System.String)">
+            <summary>
+             将文件路径转换成程序路径
+            </summary>
+            <param name="path">路径</param>
+            Author  : Napoleon
+            Created : 2016-03-28 10:53:59
+        </member>
+        <member name="M:Napoleon.PublicCommon.File.FilePathFunc.OpenFloder(System.String)">
+            <summary>
+             创建文件夹
+            </summary>
+            <param name="path">路径</param>
+            Author  : Napoleon
+            Created : 2016-03-28 11:20:50
+        </member>
+        <member name="M:Napoleon.PublicCommon.File.FilePathFunc.OpenFile(System.String)">
+            <summary>
+             创建文件
+            </summary>
+            <param name="path">路径</param>
+            Author  : Napoleon
+            Created : 2016-03-28 11:20:50
+        </member>
         <member name="M:Napoleon.PublicCommon.File.FileStreamFunc.StreamToBytes(System.IO.Stream)">
             <summary>
              将Stream转换成byte[]
@@ -358,6 +382,13 @@
             Author  : Napoleon
             Created : 2016-02-20 10:07:58
         </member>
+        <member name="T:Napoleon.PublicCommon.Http.CacheFunc">
+            <summary>
+             尽量使用HttpRuntime,不使用HttpContext.Current(在多线程下后者为null)
+            </summary>
+            Author  : Napoleon
+            Created : 2016-03-28 10:50:28
+        </member>
         <member name="M:Napoleon.PublicCommon.Http.CacheFunc.InsertSlidingCache(System.String,System.Object,System.Web.Caching.CacheDependency,System.Double,System.Web.Caching.CacheItemPriority)">
             <summary>
              写入缓存(相对过期)
@@ -609,7 +640,7 @@
         </member>
         <member name="M:Napoleon.PublicCommon.Http.IpFunc.GetIp">
             <summary>
-             获取ip地址
+             获取用户ip地址
             </summary>
             Author  : Napoleon
             Created : 2015-01-12 15:05:27

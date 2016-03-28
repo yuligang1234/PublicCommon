@@ -71,5 +71,6 @@ namespace Napoleon.PublicCommon.Base
         
 
         #endregion
+
     }
 }

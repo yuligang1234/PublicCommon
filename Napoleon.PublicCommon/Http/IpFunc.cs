@@ -1,5 +1,4 @@
-﻿
-using System.Management;
+﻿using System.Management;
 using System.Net;
 using System.Web;
 
@@ -9,26 +8,23 @@ namespace Napoleon.PublicCommon.Http
     {
 
         /// <summary>
-        ///  获取ip地址
+        ///  获取用户ip地址
         /// </summary>
         /// Author  : Napoleon
         /// Created : 2015-01-12 15:05:27
         public static string GetIp()
         {
-            string ip = string.Empty;
-            if (HttpContext.Current != null)
+            string ip = "";
+            if (HttpContext.Current != null)//在多线程中不能使用
             {
-                //判断客户端是否使用了代理(不一定能判断出来)
-                if (HttpContext.Current.Request.ServerVariables["HTTP_VIA"] != null) 
+                ip = HttpContext.Current.Request.ServerVariables["HTTP_X_FORWARDED_FOR"];
+                if (string.IsNullOrEmpty(ip))
                 {
-                    //得到真实的客户端地址
-                    ip = HttpContext.Current.Request.ServerVariables["HTTP_X_FORWARDED_FOR"];
+                    ip = HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"];
                 }
-                else//如果没有使用代理服务器
+                if (string.IsNullOrEmpty(ip))
                 {
                     ip = HttpContext.Current.Request.UserHostAddress;
-                    //得到服务端的地址要判断  System.Web.HttpContext.Current 为空的情况
-                    //ip = HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"];
                 }
             }
             return ip;
