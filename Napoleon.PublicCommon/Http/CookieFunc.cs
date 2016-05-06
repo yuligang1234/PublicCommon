@@ -18,12 +18,17 @@ namespace Napoleon.PublicCommon.Http
         /// Created : 2015-01-07 20:03:23
         public static void WriteCookie(this string strvalue, string strname, int days = 1)
         {
-            var cookie = HttpContext.Current.Request.Cookies[strname];
-            cookie = cookie ?? new HttpCookie(strname);
-            cookie.Value = strvalue;
-            if (days > 0)
-                cookie.Expires = DateTime.Now.AddDays(days);
-            HttpContext.Current.Response.AppendCookie(cookie);
+            if (HttpContext.Current != null)
+            {
+                var cookie = HttpContext.Current.Request.Cookies[strname];
+                cookie = cookie ?? new HttpCookie(strname);
+                cookie.Value = strvalue;
+                if (days > 0)
+                {
+                    cookie.Expires = DateTime.Now.AddDays(days);
+                }
+                HttpContext.Current.Response.AppendCookie(cookie);
+            }
         }
 
         /// <summary>
@@ -37,14 +42,17 @@ namespace Napoleon.PublicCommon.Http
         /// Created : 2015-01-07 20:03:23
         public static void WriteCookie<T>(this T t, string strname, int days = 1)
         {
-            var cookie = HttpContext.Current.Request.Cookies[strname];
-            cookie = cookie ?? new HttpCookie(strname);
-            cookie.Value = t.SerializeObject();
-            if (days > 0)
+            if (HttpContext.Current != null)
             {
-                cookie.Expires = DateTime.Now.AddDays(days);
+                var cookie = HttpContext.Current.Request.Cookies[strname];
+                cookie = cookie ?? new HttpCookie(strname);
+                cookie.Value = t.SerializeObject();
+                if (days > 0)
+                {
+                    cookie.Expires = DateTime.Now.AddDays(days);
+                }
+                HttpContext.Current.Response.AppendCookie(cookie);
             }
-            HttpContext.Current.Response.AppendCookie(cookie);
         }
 
         /// <summary>
@@ -55,8 +63,11 @@ namespace Napoleon.PublicCommon.Http
         /// Created : 2015-01-07 20:03:23
         public static string ReadCookie(this string strname)
         {
-            var cookies = HttpContext.Current.Request.Cookies[strname];
-            return cookies != null ? cookies.Value : "";
+            if (HttpContext.Current != null && HttpContext.Current.Request.Cookies[strname] != null)
+            {
+                return HttpContext.Current.Request.Cookies[strname].Value;
+            }
+            return "";
         }
 
         /// <summary>
@@ -68,8 +79,11 @@ namespace Napoleon.PublicCommon.Http
         /// Created : 2015-01-07 20:03:23
         public static T ReadCookie<T>(this string strname) where T : class
         {
-            var cookies = HttpContext.Current.Request.Cookies[strname];
-            return cookies != null ? cookies.Value.DSerializeToObject<T>() : default(T);
+            if (HttpContext.Current != null && HttpContext.Current.Request.Cookies[strname] != null)
+            {
+                return HttpContext.Current.Request.Cookies[strname].Value.DSerializeToObject<T>();
+            }
+            return default(T);
         }
 
         /// <summary>
@@ -80,7 +94,7 @@ namespace Napoleon.PublicCommon.Http
         /// Created : 2015-01-07 20:03:23
         public static void DeleteCookie(this string strname)
         {
-            if (HttpContext.Current.Request.Cookies[strname] != null)
+            if (HttpContext.Current != null && HttpContext.Current.Request.Cookies[strname] != null)
             {
                 HttpCookie cookie = HttpContext.Current.Request.Cookies[strname];
                 cookie.Expires = DateTime.Now.AddDays(-1);

@@ -12,9 +12,8 @@ namespace Napoleon.PublicCommon.Base
         public static string GetCustomId()
         {
             string guid = Guid.NewGuid().ToString().Replace("-", "").Substring(0, 10);
-            string id = DateTime.Now.ToString("yyyyMMddHHmmssfffffff");
-            guid += id;
-            return guid;
+            string id = DateTime.Now.ToString("yyyyMMddHHmmssffffff");
+            return id + guid;
         }
 
     }

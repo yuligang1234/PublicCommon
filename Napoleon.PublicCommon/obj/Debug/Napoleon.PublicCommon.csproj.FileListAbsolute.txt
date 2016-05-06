@@ -25,6 +25,5 @@ D:\Napoleon\GitHub\功能模块\公共模块\PublicCommon\Napoleon.PublicCommon\
 D:\Napoleon\GitHub\功能模块\公共模块\PublicCommon\Napoleon.PublicCommon\bin\Debug\NPOI.OOXML.xml
 D:\Napoleon\GitHub\功能模块\公共模块\PublicCommon\Napoleon.PublicCommon\bin\Debug\NPOI.OpenXml4Net.xml
 D:\Napoleon\GitHub\功能模块\公共模块\PublicCommon\Napoleon.PublicCommon\bin\Debug\SharpConfig.xml
-D:\Napoleon\GitHub\功能模块\公共模块\PublicCommon\Napoleon.PublicCommon\obj\Debug\Napoleon.PublicCommon.csprojResolveAssemblyReference.cache
 D:\Napoleon\GitHub\功能模块\公共模块\PublicCommon\Napoleon.PublicCommon\obj\Debug\Napoleon.PublicCommon.dll
 D:\Napoleon\GitHub\功能模块\公共模块\PublicCommon\Napoleon.PublicCommon\obj\Debug\Napoleon.PublicCommon.pdb
